@@ -14,10 +14,11 @@
   * open browser
   * show plantuml
   * ftplugin (different config for filetypes)
+    * see .config/nvim/after
 
 # Do manually
 * python3.6 -m pip install neovim
-* In nepvim run:
+* In neovim run:
   * :PlugInstall
   * :UpdateRemotePlugins
   * :CocInstall coc-python
