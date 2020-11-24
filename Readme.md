@@ -1,5 +1,4 @@
-For neovim install vim-plug plugin manually from [here](https://github.com/junegunn/vim-plug#unix-linux)
-
+# Config contains these components
 * tmux
 * gitconfig
 * bashrc
@@ -15,3 +14,10 @@ For neovim install vim-plug plugin manually from [here](https://github.com/juneg
   * open browser
   * show plantuml
   * ftplugin (different config for filetypes)
+
+# Do manually
+* python3.6 -m pip install neovim
+* In nepvim run:
+  * :PlugInstall
+  * :UpdateRemotePlugins
+  * :CocInstall coc-python
