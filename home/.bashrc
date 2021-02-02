@@ -116,7 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=$HOME/.local/bin:$PATH
+# It is necessary for docker compose run for sbbroker
+export BROKER_UID=$(id -u)
+export BROKER_GID=$(id -g)
 
 alias t="tmux"
 alias ta="tmux attach -t"
