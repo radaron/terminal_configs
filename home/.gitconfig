@@ -14,6 +14,8 @@
     fa-all = log --all --decorate --graph --pretty=format:'%Cred%h%Creset -%Cgreen(%ci) %C(bold blue)<%an>%Creset %C(yellow)%d%Creset %s' --abbrev-commit
     fa = log --decorate --graph --pretty=format:'%Cred%h%Creset -%Cgreen(%ci) %C(bold blue)<%an, %ae>%Creset %C(yellow)%d%Creset %s' --abbrev-commit
     d = difftool
+    pop = stash pop
+    sl = stash list
 
 
 

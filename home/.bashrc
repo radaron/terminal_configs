@@ -116,6 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# It is for tmux to share bash history
+export PROMPT_COMMAND="history -a; history -n"
+
 # It is necessary for docker compose run for sbbroker
 export BROKER_UID=$(id -u)
 export BROKER_GID=$(id -g)
