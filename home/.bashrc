@@ -116,8 +116,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# It is for tmux to share bash history
-export PROMPT_COMMAND="history -a; history -n"
+function exit_status {
+    if [[ $? -eq 0 ]]
+    then
+        echo -e "\033[0;36m[\033[0;32mo\033[0;36m]"
+    else
+        echo -e "\033[0;36m[\033[0;31mx\033[0;36m]"
+    fi
+}
 
 # It is necessary for docker compose run for sbbroker
 export BROKER_UID=$(id -u)
@@ -130,6 +136,6 @@ alias o=xdg-open
 alias n=nvim
 alias vim=nvim
 
-PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\]@\[\033[0;36m\]\h \w\[\033[0;32m\]$(__git_ps1)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\]>\[\033[0m\] '
+PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\]@\[\033[0;36m\]\h \w\[\033[0;32m\]$(__git_ps1) $(exit_status)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\]>\[\033[0m\] '
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
