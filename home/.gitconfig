@@ -17,6 +17,7 @@
     pop = stash pop
     sl = stash list
     f = fetch
+    wl = worktree list
 
 
 

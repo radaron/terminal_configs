@@ -136,6 +136,11 @@ alias o=xdg-open
 alias n=nvim
 alias vim=nvim
 
-PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\]@\[\033[0;36m\]\h \w\[\033[0;32m\]$(__git_ps1) $(exit_status)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\]>\[\033[0m\] '
+eval "$(starship init bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# BEGIN Managed by ansible, do not modify manually
+# For locally installed pip packages (--user) "$HOME/.local/bin"
+# must be in $PATH
+[[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && PATH="$HOME/.local/bin:${PATH}"
+# END Managed by ansible, do not modify manually
