@@ -116,25 +116,27 @@ if ! shopt -oq posix; then
   fi
 fi
 
-function exit_status {
-    if [[ $? -eq 0 ]]
-    then
-        echo -e "\033[0;36m[\033[0;32m$?\033[0;36m]"
-    else
-        echo -e "\033[0;36m[\033[0;31m$?\033[0;36m]"
-    fi
-}
-
 # It is necessary for docker compose run for sbbroker
 export BROKER_UID=$(id -u)
 export BROKER_GID=$(id -g)
 
-alias t="tmux"
+alias t="TERM=xterm-256color tmux"
 alias ta="tmux attach -t"
 alias tl="tmux list-sessions"
 alias o=xdg-open
 alias n=nvim
 alias vim=nvim
+alias note='nvim --cmd "cd ~/.notes"'
+
+function starship_init(){
+    if [[ `docker ps` == *"broker_local"* ]]; then
+        export BROKER_STATUS="BROKER"
+    else
+        export BROKER_STATUS=""
+    fi
+}
+
+starship_precmd_user_func="starship_init"
 
 eval "$(starship init bash)"
 
@@ -144,3 +146,4 @@ eval "$(starship init bash)"
 # must be in $PATH
 [[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && PATH="$HOME/.local/bin:${PATH}"
 # END Managed by ansible, do not modify manually
+. "$HOME/.cargo/env"

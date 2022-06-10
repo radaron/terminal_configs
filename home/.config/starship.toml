@@ -1,23 +1,25 @@
 # Inserts a blank line between shell prompts
 add_newline = false
 
-[character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[➜](bold red)"
-
 [username]
-show_always = true
+disabled = true
 
 [hostname]
-ssh_only = false
+disabled = true
 
 [git_branch]
-symbol = ''
+truncation_length = 40
 
-[battery]
-full_symbol = "🔋"
-charging_symbol = "⚡️"
-discharging_symbol = "💀"
+[docker_context]
+disabled = true
 
 [[battery.display]]
 threshold = 20
+
+[directory]
+truncation_length = 5
+format = "in [$path]($style)[$read_only]($read_only_style) "
+
+[env_var.BROKER_STATUS]
+default = ""
+format = "[$env_value](bold blue) "
