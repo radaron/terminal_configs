@@ -126,17 +126,7 @@ alias tl="tmux list-sessions"
 alias o=xdg-open
 alias n=nvim
 alias vim=nvim
-alias note='nvim --cmd "cd ~/.notes"'
-
-function starship_init(){
-    if [[ `docker ps` == *"broker_local"* ]]; then
-        export BROKER_STATUS="BROKER"
-    else
-        export BROKER_STATUS=""
-    fi
-}
-
-starship_precmd_user_func="starship_init"
+alias note='nvim ~/.notes/todo --cmd "cd ~/.notes"'
 
 eval "$(starship init bash)"
 
