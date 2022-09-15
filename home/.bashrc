@@ -136,4 +136,3 @@ eval "$(starship init bash)"
 # must be in $PATH
 [[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && PATH="$HOME/.local/bin:${PATH}"
 # END Managed by ansible, do not modify manually
-. "$HOME/.cargo/env"
