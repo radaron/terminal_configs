@@ -18,8 +18,7 @@ threshold = 20
 
 [directory]
 truncation_length = 5
-format = "in [$path]($style)[$read_only]($read_only_style) "
 
-[env_var.BROKER_STATUS]
-default = ""
-format = "[$env_value](bold blue) "
+[kubernetes]
+disabled = false
+format = '[kube:$context]($style) in '

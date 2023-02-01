@@ -126,7 +126,7 @@ alias tl="tmux list-sessions"
 alias o=xdg-open
 alias n=nvim
 alias vim=nvim
-alias note='nvim ~/.notes/todo --cmd "cd ~/.notes"'
+alias note='nvim ~/.notes/todo.md --cmd "cd ~/.notes"'
 
 eval "$(starship init bash)"
 
